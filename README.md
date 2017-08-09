@@ -21,7 +21,7 @@ Angular 2 native select 2 implementation based on bootstrap 3
 Usage example:
 
 *app.module.ts*
-```javascript
+```typescript
 
 import { IqSelect2Module } from 'ng2-iq-select2';
 
@@ -59,7 +59,7 @@ import { IqSelect2Module } from 'ng2-iq-select2';
 > Exposed internal variable to bind `$item`, `$entity`, `$id`, `$index`
 
 *example typescript file*
-```javascript
+```typescript
 export class Example {
     form: FormGroup;
     listCountries: (term: string) => Observable<Country[]>;
