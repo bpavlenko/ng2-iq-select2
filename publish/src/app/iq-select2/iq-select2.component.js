@@ -87,7 +87,7 @@ var IqSelect2Component = (function () {
     IqSelect2Component.prototype.fetchData = function (term) {
         var _this = this;
         return this
-            .dataSourceProvider(term)
+            .dataSourceProvider(term, this.dataSourceProviderName)
             .map(function (items) { return _this.adaptItems(items); });
     };
     IqSelect2Component.prototype.adaptItems = function (items) {
@@ -148,7 +148,7 @@ var IqSelect2Component = (function () {
                     uniqueIds_1.push(id);
                 }
             });
-            this.selectedProvider(uniqueIds_1).subscribe(function (items) {
+            this.selectedProvider(uniqueIds_1, this.dataSourceProviderName).subscribe(function (items) {
                 _this.selectedItems = items.map(_this.iqSelect2ItemAdapter);
             });
         }
@@ -156,7 +156,7 @@ var IqSelect2Component = (function () {
     IqSelect2Component.prototype.handleSingleWithId = function (id) {
         var _this = this;
         if (id !== undefined && this.selectedProvider !== undefined) {
-            this.selectedProvider([id]).subscribe(function (items) {
+            this.selectedProvider([id], this.dataSourceProviderName).subscribe(function (items) {
                 items.forEach(function (item) {
                     var iqSelect2Item = _this.iqSelect2ItemAdapter(item);
                     _this.selectedItems = [iqSelect2Item];
@@ -340,6 +340,7 @@ var IqSelect2Component = (function () {
     ];
     IqSelect2Component.ctorParameters = function () { return []; };
     IqSelect2Component.propDecorators = {
+        'dataSourceProviderName': [{ type: core_1.Input },],
         'dataSourceProvider': [{ type: core_1.Input },],
         'selectedProvider': [{ type: core_1.Input },],
         'iqSelect2ItemAdapter': [{ type: core_1.Input },],

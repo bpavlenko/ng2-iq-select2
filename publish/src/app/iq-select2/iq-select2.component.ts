@@ -29,8 +29,9 @@ export class IqSelect2Component<T> implements AfterViewInit, ControlValueAccesso
     MORE_RESULTS_MSG = 'Showing ' + Messages.PARTIAL_COUNT_VAR + ' of ' + Messages.TOTAL_COUNT_VAR + ' results. Refine your search to show more results.';
     NO_RESULTS_MSG = 'No results available';
 
-    @Input() dataSourceProvider: (term: string) => Observable<T[]>;
-    @Input() selectedProvider: (ids: string[]) => Observable<T[]>;
+    @Input() dataSourceProviderName: string; // Hack for unification of the callback function
+    @Input() dataSourceProvider: (term: string, dataSourceProviderName: string) => Observable<T[]>;
+    @Input() selectedProvider: (ids: string[], dataSourceProviderName: string) => Observable<T[]>;
     @Input() iqSelect2ItemAdapter: (entity: T) => IqSelect2Item;
     @Input() referenceMode: 'id' | 'entity' = 'id';
     @Input() multiple = false;
@@ -112,7 +113,7 @@ export class IqSelect2Component<T> implements AfterViewInit, ControlValueAccesso
 
     private fetchData(term: string): Observable<IqSelect2Item[]> {
         return this
-            .dataSourceProvider(term)
+            .dataSourceProvider(term, this.dataSourceProviderName)
             .map((items: T[]) => this.adaptItems(items));
     }
 
@@ -174,7 +175,7 @@ export class IqSelect2Component<T> implements AfterViewInit, ControlValueAccesso
                 }
             });
 
-            this.selectedProvider(uniqueIds).subscribe((items: T[]) => {
+            this.selectedProvider(uniqueIds, this.dataSourceProviderName).subscribe((items: T[]) => {
                 this.selectedItems = items.map(this.iqSelect2ItemAdapter);
             });
         }
@@ -182,7 +183,7 @@ export class IqSelect2Component<T> implements AfterViewInit, ControlValueAccesso
 
     private handleSingleWithId(id: any) {
         if (id !== undefined && this.selectedProvider !== undefined) {
-            this.selectedProvider([id]).subscribe((items: T[]) => {
+            this.selectedProvider([id], this.dataSourceProviderName).subscribe((items: T[]) => {
                 items.forEach((item) => {
                     let iqSelect2Item = this.iqSelect2ItemAdapter(item);
                     this.selectedItems = [iqSelect2Item];

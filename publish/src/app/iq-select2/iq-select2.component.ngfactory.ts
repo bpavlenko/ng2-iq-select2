@@ -56,6 +56,7 @@ export class Wrapper_IqSelect2Component {
   /*private*/ _expr_12:any;
   /*private*/ _expr_13:any;
   /*private*/ _expr_14:any;
+  /*private*/ _expr_15:any;
   subscription0:any;
   subscription1:any;
   constructor() {
@@ -76,6 +77,7 @@ export class Wrapper_IqSelect2Component {
     this._expr_12 = import1.UNINITIALIZED;
     this._expr_13 = import1.UNINITIALIZED;
     this._expr_14 = import1.UNINITIALIZED;
+    this._expr_15 = import1.UNINITIALIZED;
   }
   ngOnDetach(view:import2.AppView<any>,componentView:import2.AppView<any>,el:any):void {
   }
@@ -83,109 +85,116 @@ export class Wrapper_IqSelect2Component {
     (this.subscription0 && this.subscription0.unsubscribe());
     (this.subscription1 && this.subscription1.unsubscribe());
   }
-  check_dataSourceProvider(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+  check_dataSourceProviderName(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
     if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_0,currValue))) {
       this._changed = true;
-      this.context.dataSourceProvider = currValue;
+      this.context.dataSourceProviderName = currValue;
       this._expr_0 = currValue;
     }
   }
-  check_selectedProvider(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+  check_dataSourceProvider(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
     if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_1,currValue))) {
       this._changed = true;
-      this.context.selectedProvider = currValue;
+      this.context.dataSourceProvider = currValue;
       this._expr_1 = currValue;
     }
   }
-  check_iqSelect2ItemAdapter(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+  check_selectedProvider(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
     if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_2,currValue))) {
       this._changed = true;
-      this.context.iqSelect2ItemAdapter = currValue;
+      this.context.selectedProvider = currValue;
       this._expr_2 = currValue;
     }
   }
-  check_referenceMode(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+  check_iqSelect2ItemAdapter(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
     if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_3,currValue))) {
       this._changed = true;
-      this.context.referenceMode = currValue;
+      this.context.iqSelect2ItemAdapter = currValue;
       this._expr_3 = currValue;
     }
   }
-  check_multiple(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+  check_referenceMode(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
     if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_4,currValue))) {
       this._changed = true;
-      this.context.multiple = currValue;
+      this.context.referenceMode = currValue;
       this._expr_4 = currValue;
     }
   }
-  check_searchDelay(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+  check_multiple(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
     if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_5,currValue))) {
       this._changed = true;
-      this.context.searchDelay = currValue;
+      this.context.multiple = currValue;
       this._expr_5 = currValue;
     }
   }
-  check_css(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+  check_searchDelay(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
     if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_6,currValue))) {
       this._changed = true;
-      this.context.css = currValue;
+      this.context.searchDelay = currValue;
       this._expr_6 = currValue;
     }
   }
-  check_placeholder(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+  check_css(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
     if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_7,currValue))) {
       this._changed = true;
-      this.context.placeholder = currValue;
+      this.context.css = currValue;
       this._expr_7 = currValue;
     }
   }
-  check_minimumInputLength(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+  check_placeholder(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
     if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_8,currValue))) {
       this._changed = true;
-      this.context.minimumInputLength = currValue;
+      this.context.placeholder = currValue;
       this._expr_8 = currValue;
     }
   }
-  check_disabled(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+  check_minimumInputLength(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
     if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_9,currValue))) {
       this._changed = true;
-      this.context.disabled = currValue;
+      this.context.minimumInputLength = currValue;
       this._expr_9 = currValue;
     }
   }
-  check_searchIcon(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+  check_disabled(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
     if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_10,currValue))) {
       this._changed = true;
-      this.context.searchIcon = currValue;
+      this.context.disabled = currValue;
       this._expr_10 = currValue;
     }
   }
-  check_deleteIcon(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+  check_searchIcon(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
     if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_11,currValue))) {
       this._changed = true;
-      this.context.deleteIcon = currValue;
+      this.context.searchIcon = currValue;
       this._expr_11 = currValue;
     }
   }
-  check_messages(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+  check_deleteIcon(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
     if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_12,currValue))) {
       this._changed = true;
-      this.context.messages = currValue;
+      this.context.deleteIcon = currValue;
       this._expr_12 = currValue;
     }
   }
-  check_resultsCount(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+  check_messages(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
     if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_13,currValue))) {
       this._changed = true;
-      this.context.resultsCount = currValue;
+      this.context.messages = currValue;
       this._expr_13 = currValue;
     }
   }
-  check_clientMode(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+  check_resultsCount(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
     if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_14,currValue))) {
       this._changed = true;
-      this.context.clientMode = currValue;
+      this.context.resultsCount = currValue;
       this._expr_14 = currValue;
+    }
+  }
+  check_clientMode(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+    if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_15,currValue))) {
+      this._changed = true;
+      this.context.clientMode = currValue;
+      this._expr_15 = currValue;
     }
   }
   ngDoCheck(view:import2.AppView<any>,el:any,throwOnChange:boolean):boolean {
